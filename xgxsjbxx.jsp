@@ -1,27 +1,27 @@
-<%-- ÍøÒ³±àÂë²ÉÓÃ¼òÌåÖÐÎÄ--%>
+<%-- ç½‘é¡µç¼–ç é‡‡ç”¨ç®€ä½“ä¸­æ–‡--%>
 <%@ page contentType="text/html;charset=GB2312"%>
-<%-- °üº¬Á¬½ÓÊý¾Ý¿âµÄÎÄ¼þ--%>
+<%-- åŒ…å«è¿žæŽ¥æ•°æ®åº“çš„æ–‡ä»¶--%>
 <%@ include file="jdbc-xsjbxx.jsp"%>
 
 <html>
 <head>
 <meta http-equiv="Content-Language" content="zh-cn">
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>ÐÞ¸ÄÑ§Éú»ù±¾ÐÅÏ¢</title>
-<!--ÒýÈëÐÅÏ¢¼ìÑéÎÄ¼þ-->
+<title>ä¿®æ”¹å­¦ç”ŸåŸºæœ¬ä¿¡æ¯</title>
+<!--å¼•å…¥ä¿¡æ¯æ£€éªŒæ–‡ä»¶-->
 <script src="xsjbxx.js" language="javascript"></script>
-<!--ÒýÈëÑùÊ½ÎÄ¼þ-->
+<!--å¼•å…¥æ ·å¼æ–‡ä»¶-->
 <link rel =stylesheet href="xsjbxx.css" type=text/css>
 </head>
 
 <%String xuehao=request.getParameter("xuehao");%>
 
 <%
-// ¸ù¾ÝÑ§ºÅ²éÑ¯Ñ§Éú»ù±¾ÐÅÏ¢
+// æ ¹æ®å­¦å·æŸ¥è¯¢å­¦ç”ŸåŸºæœ¬ä¿¡æ¯
 String sql="select * from xsjbxx where xuehao='"+xuehao+"'";
 ResultSet rs=s.executeQuery(sql);
 
-// ¶¨Òå±äÁ¿´æ´¢²éÑ¯½á¹û
+// å®šä¹‰å˜é‡å­˜å‚¨æŸ¥è¯¢ç»“æžœ
 String xingming="";
 String xingbie="";
 String chushengriqi="";
@@ -31,7 +31,7 @@ String aihao="";
 String tiyuyundong="";
 String beizhu="";
 
-// ±éÀú½á¹û¼¯£¬½«Êý¾Ý¸³Öµ¸ø±äÁ¿
+// éåŽ†ç»“æžœé›†ï¼Œå°†æ•°æ®èµ‹å€¼ç»™å˜é‡
 while (rs.next ()){
 	xingming=rs.getString(1);
 	xuehao=rs.getString(2);
@@ -44,7 +44,7 @@ while (rs.next ()){
 	beizhu=rs.getString(9);
 }
 
-// ¹Ø±Õ½á¹û¼¯£¬Óï¾äºÍÁ¬½Ó¶ÔÏó
+// å…³é—­ç»“æžœé›†ï¼Œè¯­å¥å’Œè¿žæŽ¥å¯¹è±¡
 rs.close ();
 s.close ();
 c.close ();
@@ -52,49 +52,49 @@ c.close ();
 
 
 <body>
-<!--µã»÷Ìá½»°´Å¥Ê±£¬±íµ¥Êý¾Ý»á±»·¢ËÍµ½zxxgxsjbxx.jsp-->
+<!--ç‚¹å‡»æäº¤æŒ‰é’®æ—¶ï¼Œè¡¨å•æ•°æ®ä¼šè¢«å‘é€åˆ°zxxgxsjbxx.jsp-->
 <form name=form1 onsubmit="return checkform()" method="POST" action="zxxgxsjbxx.jsp">
 	<div align="center">
 		<table border="1" width="69%" cellspacing="1" cellpadding="3" height="484" bordercolor="#000000" id="table">
 			<tr>
 				<td colspan="2">
-				<a href="index.htm">Ö÷Ò³</a>-&gt;<a href="cxxsjbxx.jsp">²éÑ¯Ñ§Éú»ù±¾ÐÅÏ¢</a>->ÐÞ¸ÄÑ§Éú»ù±¾ÐÅÏ¢</td>
+				<a href="index.htm">ä¸»é¡µ</a>-&gt;<a href="cxxsjbxx.jsp">æŸ¥è¯¢å­¦ç”ŸåŸºæœ¬ä¿¡æ¯</a>->ä¿®æ”¹å­¦ç”ŸåŸºæœ¬ä¿¡æ¯</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-				<p align="center" id=s1>ÇëÊäÈëÑ§Éú»ù±¾ÐÅÏ¢</td>
+				<p align="center" id=s1>è¯·è¾“å…¥å­¦ç”ŸåŸºæœ¬ä¿¡æ¯</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-				<p align="center"><font id=s3></font>£¨´ø**ºÅÎª±ØÌîÏîÄ¿£©</font></td>
+				<p align="center"><font id=s3></font>ï¼ˆå¸¦**å·ä¸ºå¿…å¡«é¡¹ç›®ï¼‰</font></td>
 			</tr>
 			<tr>
-				<td width="22%" id=s2>ÐÕÃû</td>
-				<td width="72%"><input type="text" name="xingming" size="20" value="<%= xingming %>"><font id=s3>**²»¶àÓÚ4¸öºº×Ö</font></td>
+				<td width="22%" id=s2>å§“å</td>
+				<td width="72%"><input type="text" name="xingming" size="20" value="<%= xingming %>"><font id=s3>**ä¸å¤šäºŽ4ä¸ªæ±‰å­—</font></td>
 			</tr>
 			<tr>
-				<td width="22%" id=s2>Ñ§ºÅ</td>
-				<td width="72%"><input type="text" name="xuehao" size="20" value="<%= xuehao %>" readonly><font id=s3>**Ñ§ºÅ²»¿ÉÐÞ¸Ä</font></td>
+				<td width="22%" id=s2>å­¦å·</td>
+				<td width="72%"><input type="text" name="xuehao" size="20" value="<%= xuehao %>" readonly><font id=s3>**å­¦å·ä¸å¯ä¿®æ”¹</font></td>
 			</tr>
 			<tr>
-				<td width="22%" id=s2>ÐÔ±ð</td>
+				<td width="22%" id=s2>æ€§åˆ«</td>
 				<td width="72%">
-				<! --ÕâÀïÊ¹ÓÃÁËÌõ¼þ±í´ïÊ½,ÆäÓï·¨¸ñÊ½Îª:(Ìõ¼þ )? ×Ö·û´®ÖÐÃ»ÓÐÕÒµ½Ö¸¶¨µÄ×Ó×Ö·û´®¡£½á¹û 1:½á¹û 2,Ê×ÏÈ¼ÆËãÌõ¼þ,·µ»ØÖµÎªtrue Ê±,±í´ïÊ½µÄÖµÎª½á¹û1,Îª falseÊ±,±í´ïÊ½µÄÖµÎª½á¹û2&-- >
-				<input type="radio" value="ÄÐ" name="xingbie"<%= xingbie.indexOf("ÄÐ")!=-1?"checked":"" %>>ÄÐ
-				<input type="radio" value="Å®" name="xingbie"<%= xingbie.indexOf("Å®")!=-1?"checked":"" %>>Å®</td>
+				<! --è¿™é‡Œä½¿ç”¨äº†æ¡ä»¶è¡¨è¾¾å¼,å…¶è¯­æ³•æ ¼å¼ä¸º:(æ¡ä»¶ )? å­—ç¬¦ä¸²ä¸­æ²¡æœ‰æ‰¾åˆ°æŒ‡å®šçš„å­å­—ç¬¦ä¸²ã€‚ç»“æžœ 1:ç»“æžœ 2,é¦–å…ˆè®¡ç®—æ¡ä»¶,è¿”å›žå€¼ä¸ºtrue æ—¶,è¡¨è¾¾å¼çš„å€¼ä¸ºç»“æžœ1,ä¸º falseæ—¶,è¡¨è¾¾å¼çš„å€¼ä¸ºç»“æžœ2&-- >
+				<input type="radio" value="ç”·" name="xingbie"<%= xingbie.indexOf("ç”·")!=-1?"checked":"" %>>ç”·
+				<input type="radio" value="å¥³" name="xingbie"<%= xingbie.indexOf("å¥³")!=-1?"checked":"" %>>å¥³</td>
 				</td>
 			</tr>
 			<tr>
-				<td width="22%" id=s2>³öÉúÈÕÆÚ</td>
+				<td width="22%" id=s2>å‡ºç”Ÿæ—¥æœŸ</td>
 				<td width="72%">
-				<input type="text" name="chushengriqi" size="20"  value="<%= chushengriqi %>"><font id=s3>**±ØÐëÊÇÓÐÐ§ÈÕÆÚ£¬²¢·ûºÏ¡°YYYY-MM-DD¡±¸ñÊ½</font></td>
+				<input type="text" name="chushengriqi" size="20"  value="<%= chushengriqi %>"><font id=s3>**å¿…é¡»æ˜¯æœ‰æ•ˆæ—¥æœŸï¼Œå¹¶ç¬¦åˆâ€œYYYY-MM-DDâ€æ ¼å¼</font></td>
 			</tr>
 			<tr>
-				<td width="22%" id=s2 >µç×ÓÓÊÏä</td>
-				<td width="72%"><input type="text" name="youxiang" size="20" value="<%= youxiang %>"><font id=s3>**²»¶àÓÚ30¸ö×Ö·û£¬×Ö·ûÖÐ±ØÐë°üº¬¡°@¡±ºÍ¡°.¡±·ûºÅ£¬²¢ÇÒ¡°@¡±·ûºÅ¼È²»ÄÜÊÇµç×ÓÓÊÏäµÄµÚÒ»¸ö×Ö·û£¬Ò²²»ÄÜÊÇ×îºóÒ»¸ö×Ö·û</font></td>
+				<td width="22%" id=s2 >ç”µå­é‚®ç®±</td>
+				<td width="72%"><input type="text" name="youxiang" size="20" value="<%= youxiang %>"><font id=s3>**ä¸å¤šäºŽ30ä¸ªå­—ç¬¦ï¼Œå­—ç¬¦ä¸­å¿…é¡»åŒ…å«â€œ@â€å’Œâ€œ.â€ç¬¦å·ï¼Œå¹¶ä¸”â€œ@â€ç¬¦å·æ—¢ä¸èƒ½æ˜¯ç”µå­é‚®ç®±çš„ç¬¬ä¸€ä¸ªå­—ç¬¦ï¼Œä¹Ÿä¸èƒ½æ˜¯æœ€åŽä¸€ä¸ªå­—ç¬¦</font></td>
 			</tr>
 			<tr>
-				<td width="22%" id=s2>ÑªÐÍ</td>
+				<td width="22%" id=s2>è¡€åž‹</td>
 				<td width="72%">
 					<select size="1"name="xuexing">
 						<option value="A"<%= xuexing.indexOf("A")!= -1?"selected":"" %>> A</op-tion>
@@ -105,41 +105,41 @@ c.close ();
 				</td>
 			</tr>
 			<tr>
-				<td width="22%" id=s2>ÐËÈ¤°®ºÃ</td>
+				<td width="22%" id=s2>å…´è¶£çˆ±å¥½</td>
 				<td width="70%">
-					<input type="checkbox" name="aihao" value="ÔÄ¶Á"<%= aihao.indexOf("ÔÄ¶Á")!=-1?"checked":"" %>>ÔÄ¶Á
-					<input type="checkbox" name="aihao" value="ÒôÀÖ"<%= aihao.indexOf("ÒôÀÖ")!=-1?"checked":"" %>>ÒôÀÖ
-					<input type="checkbox" name="aihao" value="ÃÀÊ³"<%= aihao.indexOf("ÃÀÊ³")!=-1?"checked":"" %>>ÃÀÊ³
-					<input type="checkbox" name="aihao" value="ÔË¶¯"<%= aihao.indexOf("ÔË¶¯")!=-1?"checked":"" %>>ÒôÀÖ
-					<input type="checkbox" name="aihao" value="ÂÃÓÎ"<%= aihao.indexOf("ÂÃÓÎ")!=-1?"checked":"" %>>ÂÃÓÎ
+					<input type="checkbox" name="aihao" value="é˜…è¯»"<%= aihao.indexOf("é˜…è¯»")!=-1?"checked":"" %>>é˜…è¯»
+					<input type="checkbox" name="aihao" value="éŸ³ä¹"<%= aihao.indexOf("éŸ³ä¹")!=-1?"checked":"" %>>éŸ³ä¹
+					<input type="checkbox" name="aihao" value="ç¾Žé£Ÿ"<%= aihao.indexOf("ç¾Žé£Ÿ")!=-1?"checked":"" %>>ç¾Žé£Ÿ
+					<input type="checkbox" name="aihao" value="è¿åŠ¨"<%= aihao.indexOf("è¿åŠ¨")!=-1?"checked":"" %>>éŸ³ä¹
+					<input type="checkbox" name="aihao" value="æ—…æ¸¸"<%= aihao.indexOf("æ—…æ¸¸")!=-1?"checked":"" %>>æ—…æ¸¸
 				</td>
 			</tr>
 			<tr>
 				<td width="22%"  style="font-weight:bold;color:black;font-size:18;text-align:right;letter-spacing:0.5em">
-				Ï²»¶µÄÌåÓýÔË¶¯</td>
+				å–œæ¬¢çš„ä½“è‚²è¿åŠ¨</td>
 				<td width="72%">
 				<select size="4" name="tiyuyundong" multiple>
-					<option value="ÀºÇò"<%= tiyuyundong.indexOf("ÀºÇò")!=-1?"selected":"" %>>ÀºÇò</option>										
-					<option value="×ãÇò"<%= tiyuyundong.indexOf("×ãÇò")!=-1?"selected":"" %>>×ãÇò</option>	
-					<option value="ÓðÃ«Çò"<%= tiyuyundong.indexOf("ÓðÃ«Çò")!=-1?"selected":"" %>>ÓðÃ«Çò</option>
-					<option value="Æ¹ÅÒÇò"<%= tiyuyundong.indexOf("Æ¹ÅÒÇò")!=-1?"selected":"" %>>Æ¹ÅÒÇò</option>	
-					<option value="ÂÖ»¬"<%= tiyuyundong.indexOf("ÂÖ»¬")!=-1?"selected":"" %>>ÂÖ»¬</option>
-					<option value="³¤ÅÜ"<%= tiyuyundong.indexOf("³¤ÅÜ")!=-1?"selected":"" %>>³¤ÅÜ</option>
-				</select><font id=s3>°´×¡Ctrl¿É¶àÑ¡</font>
+					<option value="ç¯®çƒ"<%= tiyuyundong.indexOf("ç¯®çƒ")!=-1?"selected":"" %>>ç¯®çƒ</option>										
+					<option value="è¶³çƒ"<%= tiyuyundong.indexOf("è¶³çƒ")!=-1?"selected":"" %>>è¶³çƒ</option>	
+					<option value="ç¾½æ¯›çƒ"<%= tiyuyundong.indexOf("ç¾½æ¯›çƒ")!=-1?"selected":"" %>>ç¾½æ¯›çƒ</option>
+					<option value="ä¹’ä¹“çƒ"<%= tiyuyundong.indexOf("ä¹’ä¹“çƒ")!=-1?"selected":"" %>>ä¹’ä¹“çƒ</option>	
+					<option value="è½®æ»‘"<%= tiyuyundong.indexOf("è½®æ»‘")!=-1?"selected":"" %>>è½®æ»‘</option>
+					<option value="é•¿è·‘"<%= tiyuyundong.indexOf("é•¿è·‘")!=-1?"selected":"" %>>é•¿è·‘</option>
+				</select><font id=s3>æŒ‰ä½Ctrlå¯å¤šé€‰</font>
 				</td>
 			</tr>
 			<tr>
-				<td width="22%" id=s2>±¸×¢</td>
-				<td width="72%"><textarea rows="8" name="beizhu" cols="40"><%= beizhu%></textarea><font id=s3>²»¶àÓÚ20¸öºº×Ö</font></td>
+				<td width="22%" id=s2>å¤‡æ³¨</td>
+				<td width="72%"><textarea rows="8" name="beizhu" cols="40"><%= beizhu%></textarea><font id=s3>ä¸å¤šäºŽ20ä¸ªæ±‰å­—</font></td>
 			</tr>
 			<tr>
 				<td colspan="2">
-				<p align="center"><input type="submit" value="Ìá½»" name="B1">&nbsp;
-				<input type="reset" value="ÖØÖÃ" name="B2"></td>
+				<p align="center"><input type="submit" value="æäº¤" name="B1">&nbsp;
+				<input type="reset" value="é‡ç½®" name="B2"></td>
 			</tr>
 		</table>
 	</div>
-	<p>¡¡</p>
+	<p>ã€€</p>
 </form>
 
 </body>
