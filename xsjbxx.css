@@ -1,0 +1,20 @@
+/*设置网页的整体字体样式*/
+body {font-size:10pt ;font-family:宋体 }
+
+/*表格标题的样式,字号较大,居中显示*/
+#s1{color:#000066;font-size:46;text-align:center ;font-family:宋体;font-weight:bold;}
+
+/*表格中信息项目的字体样式,粗体 ,右对齐 ,文字中间有间隔*/
+#s2{font-weight:bold ;color :black ;font-size:18;text-align:right ;letter-spacing:1em}
+
+/*表格中输入提示的字体样式,字体为幼圆*/
+#s3{color:black ;font-size:16;font-family:幼圆 }
+
+/*幼圆字体样式,较大*/
+#s4{text-align:center ;font-family:幼圆 ;font-weight:bold ;font-size:28}
+
+/*超链接样式*/
+a:link {color :#000066;text-decoration:none}
+a:visited {color :#000066;text-decoration:none}
+a:hover {color :#CC0066;text-decoration:underline}
+a:active {color :#0000FF;text-decoration:underline}
