@@ -1,0 +1,97 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>增加学生基本信息</title>
+<!--引入信息检验文件-->
+<script src="xsjbxx.js" language="javascript"></script>
+<!--引入样式文件-->
+<link rel =stylesheet href="xsjbxx.css" type=text/css>
+</head>
+
+<body>
+<form name=form1 onsubmit="return checkform()" method="POST" action="zjxsjbxx.jsp">
+	<div align="center">
+		<table border="1" width="69%" cellspacing="1" cellpadding="3" height="484" bordercolor="#000000" id="table">
+			<tr>
+				<td colspan="2">
+				<a href="index.htm">主页</a>-&gt;增加学生基本信息</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+				<p align="center" id=s1>请输入学生基本信息</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+				<p align="center"><font id=s3> </font>（带**号为必填项目）</font></td>
+			</tr>
+			<tr>
+				<td width="22%" id=s2>姓名</td>
+				<td width="72%"><input type="text" name="xingming" size="20"><font id=s3>**不多于4个汉字</font></td>
+			</tr>
+			<tr>
+				<td width="22%" id=s2>学号</td>
+				<td width="72%"><input type="text" name="xuehao" size="20"><font id=s3>**必须是8位数字</font></td>
+			</tr>
+			<tr>
+				<td width="22%" id=s2>性别</td>
+				<td width="72%">
+				<input type="radio" value="男" checked name="xingbie">男 
+				<input type="radio" name="xingbie" value="女">女</td>
+			</tr>
+			<tr>
+				<td width="22%" id=s2>出生日期</td>
+				<td width="72%">
+				<input type="text" name="chushengriqi" size="20"><font id=s3>**必须是有效日期，并符合“YYYY-MM-DD”格式</font></td>
+			</tr>
+			<tr>
+				<td width="22%" id=s2>电子邮箱</td>
+				<td width="72%"><input type="text" name="youxiang" size="20"><font id=s3>**不多于30个字符，字符中必须包含“@”和“.”符号，并且“@”符号既不能是电子邮箱的第一个字符，也不能是最后一个字符</font></td>
+			</tr>
+			<tr>
+				<td width="22%" id=s2>血型</td>
+				<td width="72%"><select size="1" name="xuexing">
+				<option value="A">A</option>
+				<option value="B">B</option>
+				<option value="AB">AB</option>
+				<option value="O">O</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td width="22%" id=s2>兴趣爱好</td>
+				<td width="72%"><input type="checkbox" name="aihao" value="阅读">阅读 
+				<input type="checkbox" name="aihao" value="音乐">音乐 
+				<input type="checkbox" name="aihao" value="美食">美食 
+				<input type="checkbox" name="aihao" value="运动">运动 
+				<input type="checkbox" name="aihao" value="旅游">旅游</td>
+			</tr>
+			<tr>
+				<td width="22%"  style="font-weight:bold;color:black;font-size:18;text-align:right;letter-spacing:0.5em">
+				喜欢的体育运动</td>
+				<td width="72%"><select size="4" name="tiyuyundong" multiple>
+				<option value="篮球">篮球</option>
+				<option value="足球">足球</option>
+				<option value="羽毛球">羽毛球</option>
+				<option value="乒乓球">乒乓球</option>
+				<option value="轮滑">轮滑</option>
+				<option value="长跑">长跑</option>
+				</select><font id=s3>按住Ctrl可多选</font>
+				</td>
+			</tr>
+			<tr>
+				<td width="22%" id=s2>备注</td>
+				<td width="72%"><textarea rows="8" name="beizhu" cols="40"></textarea><font id=s3>不多于20个汉字</font></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+				<p align="center"><input type="submit" value="提交" name="B1">&nbsp;
+				<input type="reset" value="重置" name="B2"></td>
+			</tr>
+		</table>
+	</div>
+	<p>　</p>
+</form>
+
+</body>
+
+</html>
